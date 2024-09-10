@@ -18,7 +18,7 @@ public class HouseBlendDecorador extends BaseBeverageDecorador{
     
     @Override
     public void enviar(String msj){
-        msj = "House Blend              ";
+        msj = "House Blend                    ";
         System.out.println(msj+costo);
         super.enviar(msj);
     }

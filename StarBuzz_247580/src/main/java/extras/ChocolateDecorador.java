@@ -19,7 +19,7 @@ public class ChocolateDecorador extends CondimentDecorador{
     
      @Override
     public void enviar(String msj){
-        msj = "Chocolate..................";
+        msj = "Chocolate................";
         System.out.println(msj+costo);
         super.enviar(msj);
     }

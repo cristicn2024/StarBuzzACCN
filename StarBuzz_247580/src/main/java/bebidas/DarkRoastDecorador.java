@@ -18,7 +18,7 @@ public class DarkRoastDecorador extends BaseBeverageDecorador{
     
      @Override
     public void enviar(String msj){
-        msj = "Tostado intenso          ";
+        msj = "Tostado intenso                  ";
         System.out.println(msj+costo);
         super.enviar(msj);
     }

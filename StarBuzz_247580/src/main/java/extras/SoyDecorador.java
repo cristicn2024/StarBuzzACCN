@@ -20,7 +20,7 @@ public class SoyDecorador extends CondimentDecorador{
 
      @Override
     public void enviar(String msj){
-        msj = "Leche de Soya..............";
+        msj = "Leche de Soya...........";
         System.out.println(msj+costo);
         super.enviar(msj);
     }

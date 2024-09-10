@@ -20,7 +20,7 @@ public class WhippedCreamDecorador extends CondimentDecorador{
     
      @Override
     public void enviar(String msj){
-        msj = "Crema batida................";
+        msj = "Crema batida............";
         System.out.println(msj+costo);
         super.enviar(msj);
     }

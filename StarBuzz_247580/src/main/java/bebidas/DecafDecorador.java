@@ -18,7 +18,7 @@ public class DecafDecorador extends BaseBeverageDecorador{
     
      @Override
     public void enviar(String msj){
-        msj = "Descafeinado             ";
+        msj = "Descafeinado                     ";
         System.out.println(msj+costo);
         super.enviar(msj);
     }
