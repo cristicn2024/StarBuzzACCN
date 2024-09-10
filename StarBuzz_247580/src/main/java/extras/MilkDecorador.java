@@ -7,13 +7,19 @@ package extras;
 import bebidas.IBeverage;
 
 /**
- *
+ * Clase que representa un decorador de la leche para una bebida.
+ * Extiende la clase CondimentDecorador, proporcionando un costo adicional
+ * y una personalización en la forma en que se envía el mensaje de la bebida.
  * @author crist
  */
 public class MilkDecorador extends CondimentDecorador{
 
     private final float costo = 15.00f;
 
+    /**
+     * Constructor que inicializa el decorador con una bebida base.
+     * @param base
+     */
     public MilkDecorador(IBeverage base) {
         super(base);
     }

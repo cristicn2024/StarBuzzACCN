@@ -27,12 +27,10 @@ import java.util.Scanner;
 public class StarBuzz_247580 {
 
      public static void main(String[] args) {
-        // Uso de try-with-resources para manejar el recurso Scanner correctamente
         try (Scanner scanner = new Scanner(System.in)) {
             List<IBeverage> carrito = new ArrayList<>();
             boolean continuar = true;
 
-            // Bucle principal del menú
             while (continuar) {
                 int opcion = mostrarMenuYObtenerOpcion(scanner, "Menu principal:",
                         new String[]{"Agregar bebida base", "Mostrar pedido", "Salir"});
@@ -84,7 +82,7 @@ public class StarBuzz_247580 {
     private static int obtenerOpcionValida(Scanner scanner) {
         while (!scanner.hasNextInt()) {
             System.out.println("Por favor ingrese un número válido.");
-            scanner.next(); // Limpiar la entrada inválida
+            scanner.next(); 
         }
         return scanner.nextInt();
     }
@@ -122,10 +120,9 @@ public class StarBuzz_247580 {
      * @return La bebida decorada con los condimentos aplicados.
      */
     private static IBeverage agregarCondimentos(Scanner scanner, IBeverage bebidaBase) {
-        IBeverage bebidaDecoradora = bebidaBase; // Solo decoramos sobre la bebida base
+        IBeverage bebidaDecoradora = bebidaBase;
 
         while (true) {
-            // Mostrar el menú de condimentos
             System.out.println("Seleccione condimentos (separados por espacios) y presione Enter para finalizar:");
             System.out.println("1. Milk");
             System.out.println("2. Soy");
@@ -134,7 +131,6 @@ public class StarBuzz_247580 {
             System.out.println("5. Almond Milk");
             System.out.println("6. Finalizar selección de condimentos");
 
-            // Leer la línea completa con las opciones de condimentos
             String input = scanner.nextLine().trim();
             if (input.isEmpty()) {
                 System.out.println("Opción no válida, por favor seleccione una opción.");
@@ -143,7 +139,6 @@ public class StarBuzz_247580 {
 
             String[] opcionesSeleccionadas = input.split(" ");
 
-            // Procesar cada opción seleccionada
             for (String opcion : opcionesSeleccionadas) {
                 switch (opcion) {
                     case "1" ->
@@ -172,7 +167,7 @@ public class StarBuzz_247580 {
     /**
      * Método para mostrar el pedido actual y el costo total.
      *
-     * @param carrito La lista de bebidas seleccionadas.
+     * @param orden La lista de bebidas seleccionadas.
      */
     private static void mostrarPedido(List<IBeverage> orden) {
         if (orden.isEmpty()) {

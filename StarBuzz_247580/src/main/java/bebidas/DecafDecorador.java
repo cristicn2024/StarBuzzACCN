@@ -5,13 +5,18 @@
 package bebidas;
 
 /**
- *
+ * Una clase que extiende la funcionalidad de una bebida base, aplicando un decorador que añade características adicionales. 
+ * En este caso, se implementa un "Descafeinado" con un costo establecido.
  * @author crist
  */
 public class DecafDecorador extends BaseBeverageDecorador{
     
     private final float costo = 59.00f;
 
+    /**
+     *Crea una instancia de DecafDecorador que envuelve una bebida base.
+     * @param base
+     */
     public DecafDecorador(IBeverage base) {
         super(base);
     }

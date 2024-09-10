@@ -5,23 +5,36 @@
 package bebidas;
 
 /**
- *
+ *Clase que representa una bebida, implementando la interfaz IBeverage.
+ * 
  * @author crist
  */
 public class Beverage implements IBeverage{
     
-    private float costo = 0.00f;
+    private float costo;
 
+    /**
+     * Envía un mensaje específico.
+     * @param msj
+     */
     @Override
     public void enviar(String msj) {
        
     }
 
+    /**
+     * Obtiene el costo de la bebida.
+     * @return
+     */
     @Override
     public float getCosto() {
         return costo;
     }
     
+    /**
+     * Establece el costo de la bebida.
+     * @param costo
+     */
     public void setCosto(float costo){
         this.costo = costo;
     }

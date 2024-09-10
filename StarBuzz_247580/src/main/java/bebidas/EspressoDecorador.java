@@ -5,13 +5,18 @@
 package bebidas;
 
 /**
- *
+ * Una clase que extiende la funcionalidad de una bebida base, aplicando un decorador que añade características adicionales. 
+ * En este caso, se implementa un "Espresso" con un costo establecido.
  * @author crist
  */
 public class EspressoDecorador extends BaseBeverageDecorador{
     
     private final float costo = 69.00f;
 
+    /**
+     *Crea una instancia de EspressoDecorador que envuelve una bebida base.
+     * @param base
+     */
     public EspressoDecorador(IBeverage base) {
         super(base);
     }
