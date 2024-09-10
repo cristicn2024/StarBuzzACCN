@@ -17,7 +17,6 @@ import bebidas.IBeverage;
  */
 public class CondimentDecorador extends BaseBeverageDecorador{
     
-    private final float costo = 15.00f;
 
     /**
      * Constructor que crea una instancia de `CondimentDecorador` para una bebida base.

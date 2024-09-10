@@ -5,7 +5,8 @@
 package bebidas;
 
 /**
- * Una clase que extiende la funcionalidad de una bebida base, aplicando un decorador que añade características adicionales. 
+ * Una clase que extiende la funcionalidad de una bebida base, 
+ * aplicando un decorador que añade características adicionales. 
  * En este caso, se implementa un "Tostado intenso" con un costo establecido.
  * @author crist
  */

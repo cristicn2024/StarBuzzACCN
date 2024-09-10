@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *
+ * Clase que ejecuta el codigo
  * @author crist
  */
 public class StarBuzz_247580 {
