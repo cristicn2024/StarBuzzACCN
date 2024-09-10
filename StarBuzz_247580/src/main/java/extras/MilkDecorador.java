@@ -20,7 +20,7 @@ public class MilkDecorador extends CondimentDecorador{
     
      @Override
     public void enviar(String msj){
-        msj = "Leche Deslactosada.......";
+        msj = "Leche Deslactosada......";
         System.out.println(msj+costo);
         super.enviar(msj);
     }

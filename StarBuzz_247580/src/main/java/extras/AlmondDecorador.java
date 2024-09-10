@@ -20,7 +20,7 @@ public class AlmondDecorador extends CondimentDecorador{
     
      @Override
     public void enviar(String msj){
-        msj = "Leche de Almendra........";
+        msj = "Leche de Almendra.......";
         System.out.println(msj+costo);
         super.enviar(msj);
     }
