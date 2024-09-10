@@ -10,11 +10,11 @@ package bebidas;
  */
 public class Beverage implements IBeverage{
     
-    private float costo;
+    private float costo = 59.00f;
 
     @Override
     public void enviar(String msj) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       System.out.println(msj + "Bebida base");
     }
 
     @Override

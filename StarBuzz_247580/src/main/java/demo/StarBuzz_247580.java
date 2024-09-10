@@ -123,6 +123,7 @@ public class StarBuzz_247580 {
      */
     private static IBeverage agregarCondimentos(Scanner scanner, IBeverage bebidaBase) {
         boolean agregarCondimentos = true;
+        IBeverage bebidaDecoradora = bebidaBase;
 
         while (agregarCondimentos) {
             int tipoCondimento = mostrarMenuYObtenerOpcion(scanner, "Seleccione condimentos:",
@@ -139,7 +140,7 @@ public class StarBuzz_247580 {
             }
         }
 
-        return bebidaBase;
+        return bebidaDecoradora;
     }
 
     /**

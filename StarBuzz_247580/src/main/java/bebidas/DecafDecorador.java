@@ -10,7 +10,7 @@ package bebidas;
  */
 public class DecafDecorador extends BaseBeverageDecorador{
     
-    private final float costo = 69.00f;
+    private final float costo = 59.00f;
 
     public DecafDecorador(IBeverage base) {
         super(base);
