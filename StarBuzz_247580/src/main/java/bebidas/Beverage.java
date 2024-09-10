@@ -10,11 +10,11 @@ package bebidas;
  */
 public class Beverage implements IBeverage{
     
-    private float costo = 59.00f;
+    private float costo = 0.00f;
 
     @Override
     public void enviar(String msj) {
-       System.out.println(msj + "Bebida base");
+       
     }
 
     @Override

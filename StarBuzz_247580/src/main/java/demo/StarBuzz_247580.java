@@ -122,44 +122,70 @@ public class StarBuzz_247580 {
      * @return La bebida decorada con los condimentos aplicados.
      */
     private static IBeverage agregarCondimentos(Scanner scanner, IBeverage bebidaBase) {
-        boolean agregarCondimentos = true;
-        IBeverage bebidaDecoradora = bebidaBase;
+        IBeverage bebidaDecoradora = bebidaBase; // Solo decoramos sobre la bebida base
 
-        while (agregarCondimentos) {
-            int tipoCondimento = mostrarMenuYObtenerOpcion(scanner, "Seleccione condimentos:",
-                    new String[]{"Milk", "Soy", "Chocolate", "Whipped Cream", "Almond Milk"});
+        while (true) {
+            // Mostrar el menú de condimentos
+            System.out.println("Seleccione condimentos (separados por espacios) y presione Enter para finalizar:");
+            System.out.println("1. Milk");
+            System.out.println("2. Soy");
+            System.out.println("3. Chocolate");
+            System.out.println("4. Whipped Cream");
+            System.out.println("5. Almond Milk");
+            System.out.println("6. Finalizar selección de condimentos");
 
-            switch (tipoCondimento) {
-                case 1 -> bebidaBase = new MilkDecorador(bebidaBase);
-                case 2 -> bebidaBase = new SoyDecorador(bebidaBase);
-                case 3 -> bebidaBase = new ChocolateDecorador(bebidaBase);
-                case 4 -> bebidaBase = new WhippedCreamDecorador(bebidaBase);
-                case 5 -> bebidaBase = new AlmondDecorador(bebidaBase);
-                case 6 -> agregarCondimentos = false;
-                default -> System.out.println("Opción no válida.");
+            // Leer la línea completa con las opciones de condimentos
+            String input = scanner.nextLine().trim();
+            if (input.isEmpty()) {
+                System.out.println("Opción no válida, por favor seleccione una opción.");
+                continue;
             }
-        }
 
-        return bebidaDecoradora;
+            String[] opcionesSeleccionadas = input.split(" ");
+
+            // Procesar cada opción seleccionada
+            for (String opcion : opcionesSeleccionadas) {
+                switch (opcion) {
+                    case "1" ->
+                        bebidaDecoradora = new MilkDecorador(bebidaDecoradora);
+                    case "2" ->
+                        bebidaDecoradora = new SoyDecorador(bebidaDecoradora);
+                    case "3" ->
+                        bebidaDecoradora = new ChocolateDecorador(bebidaDecoradora);
+                    case "4" ->
+                        bebidaDecoradora = new WhippedCreamDecorador(bebidaDecoradora);
+                    case "5" ->
+                        bebidaDecoradora = new AlmondDecorador(bebidaDecoradora);
+                    case "6" -> {
+                        return bebidaDecoradora; // Finaliza la selección
+                    }
+                    default ->
+                        System.out.println("Opción no válida: " + opcion);
+                }
+            }
+
+            System.out.println("Condimentos añadidos. Puede seguir agregando o presionar '6' para finalizar.");
+        }
     }
+
 
     /**
      * Método para mostrar el pedido actual y el costo total.
      *
      * @param carrito La lista de bebidas seleccionadas.
      */
-    private static void mostrarPedido(List<IBeverage> carrito) {
-        if (carrito.isEmpty()) {
-            System.out.println("El carrito está vacío.");
+    private static void mostrarPedido(List<IBeverage> orden) {
+        if (orden.isEmpty()) {
+            System.out.println("No hay bebidas en la orden.");
             return;
         }
 
         System.out.println("----------------------------------");
         System.out.println("Pedido:");
         float costoTotal = 0;
-        for (IBeverage bebida : carrito) {
-            bebida.enviar("Bebida:");
-            costoTotal += bebida.getCosto();
+        for (IBeverage bebida : orden) {
+             bebida.enviar("Bebida:");
+             costoTotal += bebida.getCosto();            
         }
         System.out.printf("Costo total: %.2f\n", costoTotal);
     }
