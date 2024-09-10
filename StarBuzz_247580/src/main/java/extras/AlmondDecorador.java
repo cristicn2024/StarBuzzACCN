@@ -4,10 +4,29 @@
  */
 package extras;
 
+import bebidas.IBeverage;
+
 /**
  *
  * @author crist
  */
-public class AlmondDecorador {
+public class AlmondDecorador extends CondimentDecorador{
+
+    private final float costo = 15.00f;
+
+    public AlmondDecorador(IBeverage base) {
+        super(base);
+    }
     
+     @Override
+    public void enviar(String msj){
+        msj = "Leche de Almendra...........";
+        System.out.println(msj+costo);
+        super.enviar(msj);
+    }
+    
+    @Override
+    public float getCosto(){
+        return super.getCosto() + costo;
+    }
 }

@@ -4,10 +4,29 @@
  */
 package extras;
 
+import bebidas.IBeverage;
+
 /**
  *
  * @author crist
  */
-public class SoyDecorador {
+public class SoyDecorador extends CondimentDecorador{
+
+    private final float costo = 15.00f;
+
+    public SoyDecorador(IBeverage base) {
+        super(base);
+    }
+
+     @Override
+    public void enviar(String msj){
+        msj = "Leche de Soya..............";
+        System.out.println(msj+costo);
+        super.enviar(msj);
+    }
     
+    @Override
+    public float getCosto(){
+        return super.getCosto() + costo;
+    }
 }

@@ -4,10 +4,29 @@
  */
 package extras;
 
+import bebidas.BaseBeverageDecorador;
+import bebidas.IBeverage;
+
+
 /**
  *
  * @author crist
  */
-public class ChocolateDecorador {
+public class CondimentDecorador extends BaseBeverageDecorador{
     
+    private final float costo = 15.00f;
+
+    public CondimentDecorador(IBeverage base) {
+        super(base);
+    }
+    
+     @Override
+    public void enviar(String msj){
+        super.enviar(msj);
+    }
+    
+    @Override
+    public float getCosto(){
+        return super.getCosto();
+    }
 }
